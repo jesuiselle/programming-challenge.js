@@ -1,12 +1,9 @@
-import './App.css';
+import React from 'react';
+
+import Jobs from "./components/Jobs/Jobs";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
-  );
+    return <Jobs/>;
 }
 
 export default App;
