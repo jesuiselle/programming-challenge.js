@@ -1,5 +1,4 @@
 import React, { useReducer, useCallback, useMemo } from 'react';
-
 import JobList from './JobList';
 import ErrorModal from '../UI/ErrorModal';
 import Search from './Search';
@@ -15,7 +14,7 @@ const jobReducer = (currentJobs, action) => {
 };
 
 const Jobs = () => {
-  const [userJobs, dispatch] = useReducer(jobReducer, []);
+  const [ userJobs, dispatch ] = useReducer(jobReducer, []);
   const {
     error,
     clear
@@ -27,21 +26,21 @@ const Jobs = () => {
 
   const jobList = useMemo(() => {
     return (
-      <JobList
-        jobs={userJobs}
+        <JobList
+        jobs={ userJobs }
       />
     );
-  }, [userJobs]);
+  }, [ userJobs ]);
 
   return (
-    <div className="App">
-      {error && <ErrorModal onClose={clear}>{error}</ErrorModal>}
+      <div className="App">
+          {error && <ErrorModal onClose={ clear }>{error}</ErrorModal>}
 
-      <section>
-        <Search onLoadJobs={filteredJobsHandler} />
-        {jobList}
-      </section>
-    </div>
+          <section>
+              <Search onLoadJobs={ filteredJobsHandler } />
+              {jobList}
+          </section>
+      </div>
   );
 };
 
