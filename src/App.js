@@ -1,5 +1,5 @@
 import React from 'react';
-import Jobs from "./components/Jobs/Jobs";
+import Jobs from './components/Jobs/Jobs';
 
 function App() {
     return <Jobs/>;
